@@ -1,0 +1,131 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "qianwei test",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "hi"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "RepeatEverythingIntent",
+                    "slots": [
+                        {
+                            "name": "query",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "  {query}"
+                    ]
+                },
+                {
+                    "name": "SchoolBuildingIntent",
+                    "slots": [
+                        {
+                            "name": "hallname",
+                            "type": "JHUSchoolBuilding"
+                        }
+                    ],
+                    "samples": [
+                        "Tell me about {hallname} hall",
+                        "Where is {hallname} hall"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "JHUSchoolBuilding",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "gilman"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "garland"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "krieger"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hodson"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "levering"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mason"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "clark"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "RepeatEverythingIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "query",
+                            "type": "AMAZON.SearchQuery",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.200294651198.1575244876201"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.200294651198.1575244876201",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "{query}"
+                    }
+                ]
+            }
+        ]
+    }
+}
